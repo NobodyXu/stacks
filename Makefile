@@ -9,4 +9,8 @@ mks := $(shell find -name '*.mk')
 #apt = `which apt-fast`
 apt := './apt.sh'
 
+all:
+	
+wsl: all
+
 include $(mks)
