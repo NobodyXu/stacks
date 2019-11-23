@@ -1,2 +1,2 @@
 # stacks
-My linux environments.
+My debian software stacks.
