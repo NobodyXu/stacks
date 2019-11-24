@@ -8,6 +8,7 @@ mks := $(shell find -name '*.mk')
 #apt = $(shell which apt-)
 #apt = `which apt-fast`
 apt := './apt.sh'
+su_orig := './su_orig.sh'
 
 all:
 	
