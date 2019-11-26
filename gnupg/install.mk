@@ -1,4 +1,4 @@
 all: install_gnupg
 
 install_gnupg:
-	$(apt) install -y gnupg
+	$(apt) install -y gnupg2
