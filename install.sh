@@ -2,4 +2,4 @@
 
 [ -z "$ORIG_USER" ] && ORIG_USER=$USER
 
-exec sudo env ORIG_USER=$ORIG_USER make -j `nproc` $1
+exec sudo env ORIG_USER=$ORIG_USER make $1
