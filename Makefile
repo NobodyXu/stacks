@@ -10,7 +10,7 @@ mks := $(shell find -name '*.mk')
 apt := './apt.sh'
 su_orig := './su_orig.sh'
 
-all:
+all: install_apt-fast
 	
 wsl: all
 
