@@ -1,5 +1,5 @@
 all: install_tmux
 
 install_tmux:
-	$(apt) install -y tmux
-	$(su_orig) ./tmux/config.sh
+	sudo $(apt) install -y tmux
+	./tmux/config.sh
