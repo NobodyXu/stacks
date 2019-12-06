@@ -9,7 +9,7 @@ mks := $(shell find -name '*.mk')
 #apt = `which apt-fast`
 apt := './apt.sh'
 su_orig := './su_orig.sh'
-append:= './append.sh'
+append := './append.sh'
 cp_to_home := './cp_to_home.sh'
 
 all: install_apt-fast
