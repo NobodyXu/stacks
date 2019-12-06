@@ -4,7 +4,7 @@
 print-%  : ; @echo $* = $($*)
 
 #mks := $(shell for each in *; do [ -d $each ] && ls $each | grep '^.*\.mk$'; done)
-mks := $(shell find -name '*.mk')
+mks := $(shell find -L -name '*.mk')
 #apt = $(shell which apt-)
 #apt = `which apt-fast`
 apt := './apt.sh'
