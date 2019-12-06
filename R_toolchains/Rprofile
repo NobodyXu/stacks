@@ -1,4 +1,5 @@
 options(download.file.method = "libcurl")
+options(Ncpus = parallel::detectCores())
 local({
     r <- getOption("repos");
     r["CRAN"] <- "https://cran.rstudio.com/"
