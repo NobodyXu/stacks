@@ -11,7 +11,10 @@ append := './append.sh'
 cp_to_home := './cp_to_home.sh'
 
 # Target Definitions
-all: install_apt-fast
+apt_update:
+	sudo $(apt) update
+
+all: apt_update install_apt-fast
 	
 wsl: all
 
