@@ -2,8 +2,10 @@
 
 # Download cpt manager
 cd ~/.local/bin
-wget https://raw.githubusercontent.com/root-project/cling/master/tools/packaging/cpt.py
-chmod +x ./cpt.py
+if [ ! -f cpt.py ]; then
+    wget https://raw.githubusercontent.com/root-project/cling/master/tools/packaging/cpt.py
+    chmod +x ./cpt.py
+fi
 
 # Goto work dir
 cd ~/.local/src
