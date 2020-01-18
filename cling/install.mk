@@ -5,4 +5,4 @@ make_local_src_dir:
 
 install_cling: make_local_src_dir install_c_toolchains install_git install_gnupg install_cmake
 	sudo $(apt) install -y debhelper devscripts
-	source ./cling/run_cpt.sh
+	exec ./cling/run_cpt.sh
