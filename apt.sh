@@ -5,8 +5,8 @@ has_command() {
 }
 
 if has_command apt-fast; then
-    apt-fast update
-    apt-fast $@
+    source apt-fast update
+    source apt-fast $@
 elif has_command apt; then
     apt update
     apt $@
