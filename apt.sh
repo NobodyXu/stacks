@@ -9,8 +9,8 @@ if has_command apt-fast; then
     source apt-fast $@
 elif has_command apt; then
     apt update
-    apt $@
+    exec apt $@
 else
     apt-get update
-    apt-get $@
+    exec apt-get $@
 fi
