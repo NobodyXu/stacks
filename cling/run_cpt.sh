@@ -11,4 +11,4 @@ chmod +x ./cpt.py
 ./cpt.py -c
 
 # Start cpt manager to download source code and compile
-./cpt.py --last-stable deb --create-dev-env Release -y --with-workdir=./cling-build/
+exec ./cpt.py --last-stable deb --create-dev-env Release -y --with-workdir=./cling-build/
