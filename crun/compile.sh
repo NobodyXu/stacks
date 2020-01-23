@@ -3,8 +3,13 @@
 mkdir -p ~/.local/src
 cd ~/.local/src
 
-git clone https://github.com/containers/crun.git
-cd crun
+if [ ! -d crun ]; then
+    git clone https://github.com/containers/crun.git
+    cd crun
+else
+    cd crun
+    git pull
+fi
 # Switch to last stable release
 ## Remove any tags starts with 'v*' as currently, they are
 ## all very old release.
