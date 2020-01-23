@@ -10,10 +10,12 @@ else
     cd crun
     git pull
 fi
+
 # Switch to last stable release
 ## Remove any tags starts with 'v*' as currently, they are
 ## all very old release.
-git tag -l | sort -V | grep -v 'v' | tail -n 1
+version=$(git tag -l | sort -V | grep -v 'v' | tail -n 1)
+git checkout tags/${version}
 
 ./autogen.sh && ./configure
 make -j $(nproc)
