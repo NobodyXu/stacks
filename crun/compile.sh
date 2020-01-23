@@ -8,6 +8,7 @@ if [ ! -d crun ]; then
     cd crun
 else
     cd crun
+    git fetch --all --tags --progress
     git pull
 fi
 
