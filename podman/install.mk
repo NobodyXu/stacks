@@ -1,9 +1,12 @@
 all: install_podman
 
-install_podman:
-	# The following instructions is adapted from:
-	#     https://github.com/containers/libpod/blob/master/install.md
+# The following instructions is adapted from:
+#     https://github.com/containers/libpod/blob/master/install.md
+
+add_key_for_podman:
 	./podman/add_key.sh
+
+install_podman: add_key_for_podman
 	sudo $(apt) install -y podman
 	sudo mkdir -p /etc/containers
 	echo -e "[registries.search]\nregistries = ['docker.io', 'quay.io']" | sudo tee /etc/containers/registries.conf
