@@ -14,6 +14,7 @@ install_podman: add_key_for_podman configure_rootless_podman_env install_crun
 	sudo $(apt) install -y podman
 	sudo mkdir -p /etc/containers
 	echo -e "[registries.search]\nregistries = ['docker.io', 'quay.io']" | sudo tee /etc/containers/registries.conf
-	sudo sed -i -e 's/runtime = "runc"/runtime = "crun"/' /usr/share/containers/libpod.conf
+	# Configure podman
+	sudo cp ./podman/libpod.conf /etc/containers/libpod.conf
 	mkdir -p ~/.config/containers
 	cp ./podman/libpod.conf ~/.config/containers
