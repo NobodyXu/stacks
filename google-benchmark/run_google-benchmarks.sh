@@ -12,5 +12,5 @@ else
 fi
 
 sudo cpupower frequency-set --governor performance
-$(mybench)
+$mybench
 exec sudo cpupower frequency-set --governor powersave
