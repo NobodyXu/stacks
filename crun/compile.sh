@@ -9,7 +9,6 @@ if [ ! -d crun ]; then
 else
     cd crun
     git fetch --all --tags --progress
-    git pull
 fi
 
 # Switch to last stable release
