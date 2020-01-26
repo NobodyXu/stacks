@@ -14,4 +14,4 @@ checkout_latest_rel 'grep -v v'
 
 ./autogen.sh && ./configure
 make -j $(nproc)
-sudo make install -j $(nproc)
+exec sudo make install -j $(nproc)
