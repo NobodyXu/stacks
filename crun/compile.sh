@@ -1,22 +1,17 @@
 #!/bin/sh
 
-mkdir -p ~/.local/src
-cd ~/.local/src
+. ./compile_helpers.sh
 
-if [ ! -d crun ]; then
-    git clone https://github.com/containers/crun.git
-    cd crun
-else
-    cd crun
-    git fetch --all --tags --progress
-fi
+cd_local_src
+
+clone_or_update crun https://github.com/containers/crun.git
+cd crun
 
 # Switch to last stable release
 ## Remove any tags starts with 'v*' as currently, they are
 ## all very old release.
-version=$(git tag -l | sort -V | grep -v 'v' | tail -n 1)
-git checkout tags/${version}
+checkout_latest_rel 'grep -v v'
 
 ./autogen.sh && ./configure
 make -j $(nproc)
-sudo make install -j $(nproc)
+sudo mame install -j $(nproc)
