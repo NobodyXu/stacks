@@ -12,7 +12,4 @@ cd crun
 ## all very old release.
 checkout_latest_rel 'grep -v v'
 
-./autogen.sh && ./configure
-
-make -j $(nproc)
-exec sudo make install -j $(nproc)
+./autogen.sh && ./configure && make -j $(nproc) && exec sudo make install -j $(nproc)
