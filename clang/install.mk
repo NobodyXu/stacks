@@ -1,4 +1,5 @@
 all: install_clang
 
 install_clang:
-	sudo $(apt) install -y clang lld
+	sudo $(apt) install -y clang lld llvm
+	./clang/post_configure.sh
