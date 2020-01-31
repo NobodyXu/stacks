@@ -1,5 +1,5 @@
 #!/bin/bash
 
-for pack in `pip3 list --user --outdated | tail -n +3 | cut -d ' ' -f 1`; do
+for pack in `pip3 list --user --outdated --not-required | tail -n +3 | cut -d ' ' -f 1`; do
     pip3 install --user -U $pack
 done
