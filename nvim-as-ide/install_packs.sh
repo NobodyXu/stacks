@@ -1,7 +1,11 @@
 #!/bin/bash
 
-cd ~/Dev/
-git clone https://github.com/NobodyXu/nvim-as-ide
+source compile_helpers.sh
+
+cd ~/Dev
+
+clone_or_update nvim-as-ide https://github.com/NobodyXu/nvim-as-ide
+
 cd nvim-as-ide/
 ./install.sh
 ./check_nvim_env.sh
