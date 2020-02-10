@@ -1,7 +1,7 @@
 all: install_python3
 
-install_python3_basics:
-	sudo $(apt) install -y python3 python3-pip python3-setuptools curl
+install_python3_basics: install_curl
+	sudo $(apt) install -y python3 python3-pip python3-setuptools
 
 install_python3: install_python3_basics
 	sudo $(apt) install -y nodejs npm
