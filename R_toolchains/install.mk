@@ -1,6 +1,6 @@
 all: install_R_toolchains
 
-install_R_mirror: install_gnupg
+install_R_mirror: install_apt-add-repository
 	sudo ./R_toolchains/add_repo.sh
 
 install_R_toolchains: install_R_mirror install_curl
