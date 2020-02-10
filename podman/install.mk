@@ -3,7 +3,7 @@ all: install_podman
 # The following instructions is adapted from:
 #     https://github.com/containers/libpod/blob/master/install.md
 
-add_key_for_podman:
+add_key_for_podman: install_apt-add-repository
 	./podman/add_key.sh
 
 configure_rootless_podman_env:
