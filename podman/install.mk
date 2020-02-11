@@ -18,3 +18,5 @@ install_podman: add_key_for_podman configure_rootless_podman_env install_crun in
 	sudo cp ./podman/libpod.conf /etc/containers/libpod.conf
 	mkdir -p ~/.config/containers
 	cp ./podman/libpod.conf ~/.config/containers
+	# Configure path to fuse-overlayfs
+	cp ./podman/storage.conf ~/.config/containers
