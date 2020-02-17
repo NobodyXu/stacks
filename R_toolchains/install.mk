@@ -8,4 +8,4 @@ install_R_toolchains: install_R_mirror install_curl
 	#$(cp_to_home) ./R_toolchains/Rprofile .Rprofile
 	cp ./R_toolchains/Rprofile ~/.Rprofile
 	sudo cp ./R_toolchains/R_upgrade.sh /usr/local/bin/
-	./R_toolchains/R_inst_packs.sh tidyverse data.table stringr stringi devtools
+	./R_toolchains/R_inst_packs.R tidyverse data.table stringr stringi devtools
