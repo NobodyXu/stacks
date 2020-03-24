@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 
 # Use ld.ldd as default linker
-sudo ln -f $(which ld.lld) /usr/bin/ld
+sudo ln -s -f $(which ld.lld) /usr/bin/ld
 
 # Use clang as default compiler
 ## Set env variables instead of with /usr/bin/cc, /usr/bin/c++ or /usr/bin/cpp to avoid breaking
