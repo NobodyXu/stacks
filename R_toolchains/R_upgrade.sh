@@ -2,5 +2,5 @@
 
 exec R --no-save --no-restore -e "
 library('devtools');
-update.packages(ask = F, Ncpus = $(nproc))
+update.packages(lib.loc = Sys.getenv('R_LIBS_USER'), ask = F, Ncpus = $(nproc))
 devtools::update_packages()"
