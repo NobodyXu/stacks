@@ -1,4 +1,4 @@
-all: install_python
+#all: install_python
 
 install_python:
 	# Nodejs and npm are requirements for jupyterlab
