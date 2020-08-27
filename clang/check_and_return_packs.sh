@@ -1,6 +1,6 @@
 #!/bin/bash
 
-packs="clang llvm "
+packs="clang llvm clangd "
 if [ -n "$(apt list lld | tail -n +2)" ]; then
     packs+=lld
 else
