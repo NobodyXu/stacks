@@ -7,4 +7,4 @@ install_nvim-as-ide: install_git install_python3_basics
 	# Install nvim wrapper to /usr/local/bin
 	sudo cp ./nvim-as-ide/nvim.sh /usr/local/bin/nvim
 	$(append) 'export EDITOR=nvim' ~/.bashrc
-	./nvim-as-ide/install_packs.sh
+	./nvim-as-ide/install.sh
