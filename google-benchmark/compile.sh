@@ -20,16 +20,23 @@ checkout_latest_rel 'grep release'
 cd ..
 
 # Make a build directory to place the build output.
-mkdir -p build
-cd build
+rm -rf build/
+mkdir build/
 
-# Generate a Makefile with cmake.
-# Use cmake -G <generator> to generate a different file type.
-cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_ENABLE_LTO=true ../
+CFLAGS="-Ofast -Wall -flto -fno-asynchronous-unwind-tables -fno-unwind-tables -fmerge-all-constants"
 
+LDFLAGS="-s -Wl,-icf=all,--gc-sections -flto -Wl,--plugin-opt=O3 -fuse-ld=lld"
+
+# Generate build system files with cmake.
+cd  build/
+cmake -DCMAKE_BUILD_TYPE=Release   \
+      -DBENCHMARK_ENABLE_LTO=true  \
+      -DCMAKE_CXX_FLAGS="$CFLAGS"  \
+      -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS" ../
 # Build the library.
-make -j $(nproc)
+cmake --build "." --config Release -j $(nproc)
+
 # Test
-make test -j $(nproc)
+ctest --build-config Release
 # Install
-exec sudo make install -j $(nproc)
+exec sudo cmake --build "." --config Release --target install
