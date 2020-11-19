@@ -5,3 +5,4 @@ local({
     r["CRAN"] <- "https://cran.rstudio.com/"
     options(repos = r)
 })
+Sys.setenv(MAKE = "make -j12")
